@@ -45,7 +45,7 @@ const convertDistrictObjToResponse = (dbObj) => {
 
 function authenticateToken(request, response, next) {
   let jwtToken;
-  const authHeader = request.header["authorization"];
+  const authHeader = request.headers["authorization"];
   if (authHeader !== undefined) {
     jwtToken = authHeader.split(" ")[1];
   }
