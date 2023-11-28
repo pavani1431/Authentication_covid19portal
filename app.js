@@ -34,6 +34,7 @@ const convertDtObjToResponse = (dbObj) => {
 };
 const convertDistrictObjToResponse = (dbObj) => {
   return {
+    districtId: dbObj.district_id,
     districtName: dbObj.district_name,
     stateId: dbObj.state_id,
     cases: dbObj.cases,
@@ -187,7 +188,7 @@ app.put(
     cases=${cases},
     cured=${cured},
     active=${active},
-    deaths=${deaths})`;
+    deaths=${deaths}`;
     await db.run(updateDistrictQuery);
     response.send("District Details Updated");
   }
